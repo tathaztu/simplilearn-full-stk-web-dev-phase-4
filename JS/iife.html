@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>IIFE</title>
+    </head>
+
+    <body>
+        <script>
+            // (
+            //     function() {
+            //         console.log('Executed');
+            //     }
+            // )();
+
+            // (
+            //     function() {
+            //         console.log('Executed this too');
+            //     }()
+            // );
+
+            // (
+            //     function(){
+            //         var empName = 'Tatha';
+            //     }
+            // )();
+            // console.log(empName);
+
+
+            // var app = {};
+            // (
+            //     function (ns) {
+            //         ns.name = 'None';
+            //     }
+            // )(app);
+
+            // console.log(app.name); // None
+
+
+            // var app = {};
+            // var jQuery = {};
+            // (
+            //     function (ns,$) {
+            //         ns.name = 'None';
+            //         console.log($ === jQuery);
+            //     }
+            // )(app, jQuery);
+            // console.log(app.name); // None
+
+
+
+            // var app = {};
+            // var jQuery = {};
+            // (
+            //     function (ns,$,undefined) {
+            //         ns.name = 'None';
+            //         console.log(undefined); // undefined
+            //     }
+            // )(app, jQuery);
+
+
+            
+            // +function () {
+            //     var employeeName = 'Tatha';
+            //     console.log('Executed');
+            // }();
+            // console.log(employeeName);
+        
+
+        </script>
+    </body>
+</html>

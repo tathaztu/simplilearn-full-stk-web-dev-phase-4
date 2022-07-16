@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Curry</title>
+    </head>
+    
+    <body>
+        <script>
+            function curry (f) {
+                return function (a) {
+                    return function (b) {
+                        return f(a, b);
+                    }
+                }
+            }
+
+            function sum(a, b) {
+                return a + b;
+            }
+
+            let curriedSum = curry(sum);
+
+            console.log(curriedSum(2)(3));
+
+
+            function calculateVolume(length) {
+                return function calculateArea(breadth) {
+                    return function calculate(height) {
+                        return length * breadth * height;
+                    }
+                }
+            }
+
+
+            console.log(calculateVolume(2)(3)(4));
+
+        </script>
+    </body>
+</html>

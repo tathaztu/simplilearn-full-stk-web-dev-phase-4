@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <title>Constructor Functions</title>
+    </head>
+
+    <body>
+        <script>
+            // Object is a Function
+            // --------------------
+            // console.log(typeof Object); // Printing a function
+
+            // Basic Function
+            // --------------
+            // function myFun() {
+            //     alert("Hello!");
+            // }
+
+            // myFun();
+
+            // Constructor Function
+            // --------------------
+            // Old way to create an Object
+            // Objects were represented as Functions
+            // var Employee = function(name) {
+            //     this.name = name;
+            //     this.salary = 5000;
+            // }
+
+            // var newEmployee = new Employee('Vinodh Mahendra');
+            // console.log(typeof newEmployee); // Object; anything that starts with new is an Object
+        
+        
+            // Multiple Params in Constructor
+            // ------------------------------
+            // var Employee = function(name, boss) {
+            //     this.name = name;
+            //     this.boss = boss;
+            // }
+            
+            // var newEmployee = new Employee('Tatha', 'Medha');
+            // console.log(newEmployee.boss);
+        
+            // ---------------------------------------------------------------------------------------
+            // var Employee = function(name) {
+            //     this.name = name;
+            //     this.salary = 5000;
+            //     this.giveRaise = function(){
+
+            //     };
+            // }
+
+            // var e1 = new Employee('Tatha');
+            // var e2 = new Employee('Medha');
+            // console.log(e1 === e2); // false
+            // console.log(e1.__proto__ === e2.__proto__); // true
+            // console.log(e1.giveRaise === e2.giveRaise); // false; each has its own copy
+
+            // console.log(typeof Employee.prototype); // Object
+
+            // console.log(Employee.prototype === Object.prototype); // false; unique for objects
+            // ---------------------------------------------------------------------------------------
+            
+
+            // ---------------------------------------------------------------------------------------            
+            // var Employee = function(name) {
+            //     this.name = name;
+            // }
+
+            // Employee.prototype.giveRaise = function() {
+            //     // Write your code here
+            // };
+
+            // var e1 = new Employee('Tatha');
+            // var e2 = new Employee('Medha');
+            // console.log(e1.giveRaise === e1.giveRaise);
+            // ---------------------------------------------------------------------------------------
+            
+            var Employee = function(name) {
+                this.name = name;
+                this.salary = 50000;
+            }
+
+            Employee.prototype.giveRaise = function(raise) {
+                this.salary += raise;
+            };
+
+            var e1 = new Employee('Tatha');
+            var e2 = new Employee('Medha');
+            e2.giveRaise(1000000);
+
+            console.log(e1.salary);
+            console.log(e2.salary);
+            
+
+
+
+</script>
+        
+    </body>
+</html>

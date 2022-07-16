@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Calling Functions</title>
+    </head>
+
+    <script>
+        // var updateZipCode = function() {
+        //     console.log(this); // window
+        // };
+        // updateZipCode.call({}); // 
+
+        // var updateZipCode = function() {
+        //     console.log(this); // window
+        // };
+        // updateZipCode.call({zip: '123456'}); // 
+
+        // var updateZipCode = function() {
+        //     console.log(this); // window
+        // };
+        // var zipCode = {zip: '12345654321'};
+        // updateZipCode.call(zipCode); // 
+
+        // var updateZipCode = function(newZip, country) {
+        //     console.log(newZip + '        ' + country); // window
+        // };
+        // var zipCode = {
+        //     zip: 56789
+        // };
+        // updateZipCode.call(zipCode, '123456', 'us');
+
+        // var updateZipCode = function(newZip, country) {
+        //     console.log(newZip + '        ' + country); // window
+        // };
+        // var zipCode = {
+        //     zip: 56789
+        // };
+        // updateZipCode.apply(zipCode, ['123456', 'us']);
+
+        var updateZipCode = function(newZip, country) {
+            console.log(newZip + '        ' + country); // window
+        };
+        var zipCode = {
+            zip: 56789
+        };
+        updateZipCode.apply(zipCode, '123456', 'us'); // user []
+
+
+
+
+    </script>
+</html>

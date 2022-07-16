@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>this</title>
+    </head>
+    <script>
+        // console.log(typeof this); // object
+        // console.log(this === window); // true
+        // var name = 'Tatha'; // This was a global declaration
+        // console.log(this.name); // at a global area, this.name, global.name or just name are all the same
+
+        // var updateSalary = function () {
+        //     console.log(this === window); // true
+        // }
+        // updateSalary();
+
+        
+        // var employee = {
+        //     name: 'Tatha',
+        //     updateSalary: function () {
+        //         var fn = function () {
+        //             console.log(this === window); // true
+        //         }
+        //         fn();
+        //     }
+        // };
+        // employee.updateSalary();
+
+
+        // var Address = function(line1) {
+        //     this.line1 = line1;
+        //     console.log(this);
+        // };
+        // var addr = new Address('12345 Test Addr.'); // new Keyword; this means this object
+        
+
+        var Address = function(line1) {
+            this.line1 = line1;
+        };
+        Address.prototype.updateZipCode = function() {
+            console.log(this);
+        }
+        var addr = new Address('12345 Test Addr.');
+        addr.updateZipCode();
+    </script>
+</html>

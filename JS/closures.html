@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Closures</title>
+    </head>
+
+    <!--
+    // Function to persist
+    // Context of the function to be intact
+    // Can access parent function's properties
+    -->
+    <body>
+        <script>
+            // ----------- Example 1 - Start ---------------------
+            // var salaryUpdater = function(salary) {
+            //     var currentSalary = salary;
+            //     var generator = function () {
+            //         currentSalary *= 2;
+            //         return currentSalary;
+            //     }
+            //     return generator;
+            // }
+
+            // var updateFunction = salaryUpdater(50000);
+            // console.log(updateFunction());
+            // ----------- Example 1 - End   ---------------------
+
+            // ----------- Example 2 - Start ---------------------
+            var salaryUpdater = function(salary) {
+                var currentSalary = salary;
+                var generator = function () {
+                    currentSalary += 10000;
+                    return currentSalary;
+                }
+                return generator;
+            }
+
+            var updateFunction = salaryUpdater(50000);
+            updateFunction();
+            console.log(updateFunction());
+            // ----------- Example 2 - End   ---------------------
+
+
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>JS Class</title>
+    </head>
+
+    <body>
+        <script type="module">
+            // class Car {
+            //     constructor(id) {
+            //         this.id = id;
+            //     }
+            // }
+
+            // let car = new Car(123);
+            // car.id = 456;
+            // console.log(car.id);
+
+
+            // class Car {
+            //     constructor(id) {
+            //         this.id = id;
+            //     }
+
+            //     // This is a method. The 'function' keyword is not required
+            //     identity(suffix) {
+            //         return `Car Id: ${this.id}${suffix}`;
+            //     }
+            // }
+            import {Car} from './models/car.js';
+            let car = new Car(955);
+            console.log(car.identity('!'));
+
+
+        </script>
+    </body>
+</html>

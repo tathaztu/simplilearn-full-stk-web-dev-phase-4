@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Function Scope</title>
+    </head>
+
+
+    <body>
+        <script>
+            // =======================================
+            // function startCar(carId) {
+            //     let message = 'Starting...';
+            // }
+        
+            // startCar(123); console.log(message);
+            //                 
+            // =======================================
+
+            // =======================================
+            function startCar (carId) {
+                let message = 'Starting...';
+                let startFn = function turnKey(){
+                    let message = 'Override';
+                };
+                startFn();
+                console.log(message);
+            }
+            startCar(123); 
+            // =======================================
+
+
+
+            
+
+        </script>
+    </body>
+</html>
+
+
