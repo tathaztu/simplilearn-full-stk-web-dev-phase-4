@@ -2,8 +2,9 @@
   <input type="text" class="form-control mb-4 mt-3" placeholder="Search" [(ngModel)]="query">
 </div>
 
-<h1>My Todos</h1>
+<h1>Todos</h1>
 
+<div class="alert alert-success" *ngIf='message'>{{message}}</div>
 <div class="container">
   <table border="1" class="table">
     <caption>My Todos</caption>
@@ -12,6 +13,8 @@
         <th>Description</th>
         <th>Target Date</th>
         <th>Is Completed?</th>
+        <th>Update</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -19,7 +22,12 @@
         <td>{{todo.description}}</td>
         <td>{{todo.targetDate | date | uppercase}}</td>
         <td>{{todo.done}}</td>
+        <td><button (click)="updateTodo(todo.id)" class="btn btn-success">Update</button></td>
+        <td><button (click)="deleteTodo(todo.id)" class="btn btn-warning">Delete</button></td>
       </tr>
     </tbody>
   </table>
+  <div class="row">
+    <button (click)="addTodo()" class="btn btn-success">Add</button>
+  </div>
 </div>

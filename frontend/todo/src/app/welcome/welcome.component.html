@@ -5,3 +5,12 @@
 <div>
   You can manage your todos <a routerLink="/todos">here</a>
 </div>
+
+<div>
+  Click <button (click)="getCustomMessage()">here</button> to get a Customized Message
+</div>
+
+<div class="container" *ngIf="welcomeMessageFromService">
+  <h2>Your custom welcome message</h2>
+  {{welcomeMessageFromService}}
+</div>
