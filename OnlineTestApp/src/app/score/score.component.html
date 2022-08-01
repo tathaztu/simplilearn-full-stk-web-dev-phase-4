@@ -1,0 +1,34 @@
+<div class="container h-100">
+  <div class="row h-100 justify-content-center align-items-center">
+
+    <div class="card h-100" style="max-width: 400px; min-width: 400px; border: 1px solid gray;">
+      <div class="card-header">
+        Score
+      </div>
+      <div class="card-body d-flex flex-column">
+        <div class="mb-auto p-2">
+          <h3 class="card-title">{{getTotalScore()}}</h3>
+        </div>
+        <div class="p-2" style="overflow-y: scroll">
+                  <div>
+                    <div class="flex-row flex-nowrap">
+                            <div class="card card-body" *ngFor="let qs of arrQsObj; let i = index;">
+                              <div style="padding: 5px;" class="card-title" [ngClass]="isAnsweredCorrectly(qs) ? 'bg-success' : 'bg-danger'">
+                                <h3>{{qs.nNum1}} + {{qs.nNum2}}</h3>
+                              </div>
+                              <div>
+                                <h4>
+                                  Correct Answer: {{qs.nNum1 + qs.nNum2}}
+                                  <br>
+                                  Your Answer: {{qs.nAnswer}}
+                                </h4>
+                              </div>
+                            </div>
+                        </div>
+                    
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

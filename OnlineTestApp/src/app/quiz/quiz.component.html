@@ -1,0 +1,62 @@
+<!-- <div class="container">
+  <h2>Pager</h2>
+  <p>The .pager class provides previous and next buttons (links):</p>                  
+  <ul class="pager">
+    <li><a href="#">Previous</a></li>
+    <li><a href="#">Next</a></li>
+  </ul>
+</div> -->
+
+<div class="container h-100">
+  <div class="row h-100 justify-content-center align-items-center">
+
+    <div class="card h-100" style="max-width: 400px; min-width: 400px; border: 1px solid gray;">
+      <div class="card-header">
+        Question {{nCurrentQuestionIdx + 1}}
+        <div id="countdown" class="float-right">
+          <div id="countdownNumber" style="height: 40px; line-height: 2.5;color: darkgray;font-weight: 450;">{{timeLimit}}</div>
+          <svg class="runAnimation" id="animatingCircle">
+            <circle r="18" cx="20" cy="20"></circle>
+          </svg>
+        </div>
+      </div>
+      <div class="card-body d-flex flex-column">
+        <div class="mb-auto p-2">
+          <h3 class="card-title">{{getCurrentQuestion() ? getCurrentQuestion().nNum1 : ''}} + {{getCurrentQuestion() ? getCurrentQuestion().nNum2 : ''}}</h3>
+        </div>
+        <!-- <div class="mb-auto p-2" style="background-color: beige;">
+          <div id="countdown">
+            <div id="countdownNumber" style="height: 40px; line-height: 2.5;color: darkgray;font-weight: 450;">{{timeLimit}}</div>
+            <svg class="runAnimation" id="animatingCircle">
+              <circle r="18" cx="20" cy="20"></circle>
+            </svg>
+          </div>
+        </div> -->
+        <div class="p-2">
+          <ul class="list-group list-group-flush mt-auto" style="text-align: center; border: 1px solid gray">
+            <li class="list-group-item">
+              <button type="button" class="btn btn-info w-100" (click)="processAnswer(0)">
+                {{getCurrentQuestion() ? getCurrentQuestion().arrAnswers[0] : ''}}
+              </button>
+            </li>
+            <li class="list-group-item">
+              <button type="button" class="btn btn-info w-100" (click)="processAnswer(1)">
+                {{getCurrentQuestion() ? getCurrentQuestion().arrAnswers[1] : ''}}
+              </button>
+            </li>
+            <li class="list-group-item">
+              <button type="button" class="btn btn-info w-100" (click)="processAnswer(2)">
+                {{getCurrentQuestion() ? getCurrentQuestion().arrAnswers[2] : ''}}
+              </button>
+            </li>
+            <li class="list-group-item">
+              <button type="button" class="btn btn-info w-100" (click)="processAnswer(3)">
+                {{getCurrentQuestion() ? getCurrentQuestion().arrAnswers[3] : ''}}
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

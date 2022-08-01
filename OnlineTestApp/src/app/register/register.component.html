@@ -1,0 +1,41 @@
+<!-- 
+<table style="margin: auto;">
+  <tr>
+    <td>Name:</td>
+    <td><input type="text" name="username"></td>
+  </tr>
+  <tr>
+    <td># Questions</td>
+    <td><input type="number"></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><button>Enter</button></td>
+  </tr>
+</table> -->
+
+
+<div class="container h-100">
+  <div class="row h-100 justify-content-center align-items-center">
+      <div class="col-10 col-md-8 col-lg-6">
+          <form class="form-example" action="" method="post">
+              <h1>Online Quiz</h1>
+              <p class="description">Please fill out the form to start</p>
+              <div class="form-group">
+                <label for="username">Username</label>
+                <div>
+                  <input type="text" class="form-control" id="username" placeholder="Username..." name="username" [(ngModel)]="username">
+                  <div *ngIf="strUserNameError"><small class="text-danger">{{strUserNameError}}</small></div>
+                </div>  
+              </div>
+              <div class="form-group">
+                <label for="numQuestions">Number of Questions</label>
+                <input type="number" class="form-control" id="numQuestions" placeholder="# Questions" name="numQuestions" [(ngModel)]="numQuestions"
+                  min="5">
+                <div *ngIf="strNumQuestionsError"><small class="text-danger">{{strNumQuestionsError}}</small></div>
+              </div>
+              <button type="submit" class="btn btn-success" (click)="handleRegistration()">Start</button>
+          </form>
+          <!-- Form end -->
+      </div>
+  </div>
+</div>
